@@ -4,7 +4,21 @@
 angular.module('applicationName', []) //list of dependences
 
 .controller('MyFirstController', function($scope) {
-	$scope.name = "Ian";
+	$scope.name = "";
+	$scope.totalValue = 0;
+
+	$scope.displayNumeric = function() {
+		var totalNameValue = calculateValue($scope.name);
+		$scope.totalValue = totalNameValue;
+	}
+
+	function calculateValue(name) {
+		var total = 0;
+		for(var i = 0; i < name.length; i++) {
+			total += name.charCodeAt(i);
+		}
+		return total;
+	}
 });
 // $ denotes something that angular provides
 

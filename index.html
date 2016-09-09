@@ -5,12 +5,20 @@
 		<script src="angular.min.js"></script>
 		<!-- Need to do angular JS first as app.js uses this-->
 		<script src="app.js"></script>
+		<style> { font-size: 1.3em; } </style>
 		<title>AngularJS Course</title>
 	</head>
 	<body>
-		<h1>AngularJS App</h1>
-		<div ng-controller="MyFirstController"> <!-- this div and all children now controlled by MyFirstController controller in JS -->
-		{{name}}
+		<div ng-controller="MyFirstController">
+			<h1>AngularJS App</h1>
+			<div> <!-- this div and all children now controlled by MyFirstController controller in JS -->
+				<input type="text"
+				ng-model="name"
+				ng-keyup="displayNumeric()"> <!-- binding input value to 'name' variable in AJS-->
+			</div>
+			<div>
+				Numeric value of string input is: {{ totalValue }}
+			</div>
 		</div>
 	</body>
 </html>
