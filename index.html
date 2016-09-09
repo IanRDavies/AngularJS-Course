@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="applicationName"> <!--binding app to html -->
 	<head>
 		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<!-- Need to do angular JS first as app.js uses this-->
+		<script src="app.js"></script>
 		<title>AngularJS Course</title>
 	</head>
 	<body>
-		<h1>First Title</h1>
-		<h2>Hello</h2>
+		<h1>AngularJS App</h1>
+		<div ng-controller="MyFirstController"> <!-- this div and all children now controlled by MyFirstController controller in JS -->
+		{{name}}
+		</div>
 	</body>
 </html>
