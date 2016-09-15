@@ -41,3 +41,5 @@ function LunchCheckController($scope) {
 	};
 };
 })();
+
+// Could have used $scope.resultText = (list.length <= 3) ? "Enjoy!" : "Too much!";
