@@ -1,0 +1,50 @@
+ !doctype html>
+<html lang="en" ng-app="ShoppingListApp">
+  <head>
+    <title>Shopping List</title>
+    <link href="favicon.ico" rel="icon" type="image/ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!-- linking in Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+    <!-- Adding scripts for JavaScript functionality -->
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+<body>
+   <!-- Binding the controller to the main div -->
+   <div class="container" ng-controller="ShoppingListController">
+      <h1>Shopping List</h1>
+      <input type="text" ng-model="newItemName" placeholder="Add item">
+      <input type="text" ng-model="newItemQuantity" placeholder="Quantity">
+      <button ng-click="addToList()">Add</button>
+      <br>
+      <br>
+      <input type="text" ng-model="search" placeholder="Search First Shopping List">
+
+      <h2> Shopping List One </h2>
+      <ul>
+       <li ng-repeat="item in shoppingList1 | filter : search"> {{ item }} </li>
+      </ul>
+
+      <h2> Shopping List Two </h2>
+      <ul>
+        <li ng-repeat="item in shoppingList2">Buy {{item.quantity}} {{item.name}}</li>
+      </ul>
+
+      <h2> Alternative Looping on Shopping List Two </h2>
+      <ul>
+        <li ng-repeat="item in shoppingList2"> 
+        <!-- The ng-repeat directive looks at item iterated over as a whole when watching-->
+          {{$index + 1}}. Buy {{item.quantity}} {{item.name}}
+          <!-- here we used the $index to number the list -->
+        </li> 
+      </ul>
+   </div>
+
+</body>
+</html>
+ --> -->
