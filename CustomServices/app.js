@@ -7,7 +7,18 @@ angular.module('ShoppingListApp', [])
 .service('ShoppingLstService', ShoppingListService);
 // Services are guaranteed to be singleton (limited to one instance) in AngularJS
 // So everything that depends on this service references the same instance and hence can be useful for sharing data across controllers
-// service is only created if needed (lazy instantiation)
+// service is only created if something depends on them (lazy instantiation)
+// A factory is not a service it produces objects (can be services or many instances)
+// A service is infact a much more limited factory - it always produces the same type of singleton service which is not so easily customisable
+// .factory("CustomService", CustonService) // function is expected to produce a service rather than being the service as in the case with .service
+// // factory gives more control over how to initialise new service
+// // can return function that returns new Service
+// // can also return an object literal with a key value pair where value is a function that returns a new Service
+// // implementation choice will affect usage
+// // OBJECT LITERAL APPROACH
+// var someService = CustonService.getService();
+// // OBJECT FUNTION APPROACH
+// var someService = CustomService()
 
 ShoppingListAddController.$inject = ['ShoppingLstService'];
 function ShoppingListAddController(ShoppingListService) {
