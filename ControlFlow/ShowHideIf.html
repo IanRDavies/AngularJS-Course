@@ -24,10 +24,12 @@
       <div ng-if="list.errorMessage" class="error">[IF] Error: {{list.errorMessage}}</div>
 
       <div ng-show="list.errorMessage" class="error"> [SHOW] Error: {{list.errorMessage}}</div> 
-      <!-- Does the same as if but angular doesnt remove then add the div it shows it if the codition is true -->
+      <!-- Does the same as if but angular doesnt remove then add the div it shows it if the codition is true
 
        <div ng-hide="list.errorMessage" class="error"> [HIDE] Error: {{list.errorMessage}}</div> 
       <!-- Does the same as if but angular doesnt remove then add the div it hides it if the codition is true -->
+
+      <!-- Use show/hide if want to edit hideable div (cannot edit when hidden if using ng-if) -->
     </div>
   </body>
 </html>

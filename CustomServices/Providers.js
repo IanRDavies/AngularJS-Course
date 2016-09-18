@@ -1,4 +1,4 @@
-// PROVIDERS - like factories but configured to your custom desites at the first point the script is run
+// PROVIDERS - like factories but configured to your custom desires at the first point the script is run
 // STEP 1: Create provider function
 // needs $get property linked to a factory function in which service is created
 // STEP 2: register Provider with module - .provider("NameofService", ServiceProvider)
