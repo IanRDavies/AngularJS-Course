@@ -1,6 +1,11 @@
 h1 {
   margin-bottom: 30px;
 }
+h3 {
+  font-style: bold;
+  font-size: 2rem;
+  display: inline;
+}
 input[type="text"] {
   width: 200px;
   float: left;
@@ -49,4 +54,20 @@ input[type="text"] {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.descr {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: grey;
+  display: inline;
+  padding-bottom: 1rem;
+}
+form {
+  padding-bottom: 5rem;
+}
+
+.remove-btn {
+    color:red;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
