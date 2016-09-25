@@ -1,0 +1,9 @@
+<!-- $ctrl is the automatic name for the controller as we dont use x as  -->
+<h3>Title: {{ $ctrl.myTitle }}</h3>
+<ol>
+  <li ng-repeat="item in $ctrl.items">
+    {{ item.quantity }} of {{ item.name }}
+    <button ng-click="$ctrl.remove($index);">Remove Item</button>
+  </li>
+</ol>
+<div class="error">WARNING! WARNING! COOKIES DETECTED!</div>
