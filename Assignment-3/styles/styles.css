@@ -71,3 +71,8 @@ form {
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
+
+.error {
+  color: red;
+  font-size: 3rem;
+}

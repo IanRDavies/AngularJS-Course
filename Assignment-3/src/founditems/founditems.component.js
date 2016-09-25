@@ -7,7 +7,8 @@ angular.module('NarrowItDownApp')
 	controller: FoundItemsComponentController,
 	bindings: {
 		found: '<',
-		onRemove: '&'
+		onRemove: '&',
+		showList: '<'
 	}
 });
 
