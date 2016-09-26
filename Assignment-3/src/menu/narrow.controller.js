@@ -20,7 +20,6 @@ function NarrowItDownController(MenuSearchService) {
 		})
 		.then(function() {
 			menu.showList = (menu.searchTerm && menu.found.length) ? true : false;
-			console.log(menu.showList);
 		});
 
 	};
