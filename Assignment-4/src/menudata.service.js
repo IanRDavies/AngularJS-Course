@@ -20,7 +20,7 @@ function MenuDataService($http, ApiBasePath){
 			for(var i=0; i<categoriesList.length; i++){
 				var shortName = categoriesList[i].short_name;
 				var name = categoriesList[i].name;
-				categoryShortNames.push({
+				categoryNames.push({
 					shortName:shortName,
 					name: name
 				});
