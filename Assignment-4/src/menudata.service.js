@@ -16,12 +16,16 @@ function MenuDataService($http, ApiBasePath){
 		})
 		.then(function(result) {
 			var categoriesList = result.data;
-			var categoryShortNames = [];
+			var categoryNames = [];
 			for(var i=0; i<categoriesList.length; i++){
 				var shortName = categoriesList[i].short_name;
-				categoryShortNames.push(shortName);
+				var name = categoriesList[i].name;
+				categoryShortNames.push({
+					shortName:shortName,
+					name: name
+				});
 			}
-			return categoryShortNames;
+			return categoryNames;
 		});
 	};
 
