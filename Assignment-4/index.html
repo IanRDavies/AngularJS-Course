@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="MenuCategoriesApp">
   <head>
+    <meta charset="utf-8">
     <title>Explore The Menu</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Libraries -->
@@ -9,15 +14,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
 
     <!-- Modules -->
-    <script></script>
+    <script src="src/menucategories.module.js"></script>
+    <script src="src/data.module.js"></script>
 
     <!-- Routes -->
-    <script></script>
+    <script src="src/routes.js"></script>
+
+    <!-- Module Artefacts -->
+    <script src="src/menudata.service.js"></script>
+    <script src="src/mainmenucontroller.controller.js"></script>
+    <script src="src/categories.component.js"></script>
+    <script src="src/items.component.js"></script>
+    <script src="src/categorydetailcontroller.controller.js"></script>
+
   </head>
 
   <body>
     <h1>Explore the Menu</h1>
-
     <ui-view></ui-view>
   </body>
 </html>
