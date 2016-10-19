@@ -11,6 +11,11 @@ function emailTest(LogInService) {
 		link: function(scope, elm, attrs, ctrl){
 			// adding cutstom valudation
 			ctrl.$validators.email = function(modelValue, viewValue){
+				if(ctrl.$isEmpty(modelValue)){
+					// consider empty models as valid
+					return true;
+				}
+
 				return LogInService.uniqueUser(viewValue)
 			}
 		},

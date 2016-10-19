@@ -12,7 +12,7 @@ function LogInService() {
 	var emails = []
 
 	service.uniqueUser = function(email){
-		if(emails.includes(email)){
+		if(emails.includes(email.toLowerCase())){
 			return false
 		}
 		else {
@@ -21,6 +21,9 @@ function LogInService() {
 	}
 
 	service.createUser = function(userData) {
+		// to prevent the same email with differing case being submitted
+		userData.email = userData.email.toLowerCase();
+		emails.push(userData.email);
 		users.push(userData);
 	}
 

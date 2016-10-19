@@ -1,0 +1,40 @@
+/* SIGN UP PAGE */
+input{
+  width: 20%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 3px;
+  margin-bottom: 3px; 
+  color: #312A20; 
+  border: 1px;
+  border-color: white;
+}
+
+.sign-up-form {
+  width: 100%;
+}
+.form-item {
+  display: inline;
+}
+.form-item-container {
+  display:inline-block;
+  width: 15em;
+  text-align: left;
+}
+.submit-button {
+  margin-left: -2%;
+  margin-top: 3rem;
+  color: black;
+}
+.sign-up-container{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 35rem;
+}
+#form-title {
+  padding-bottom: 1rem;
+  padding-left: 4%;
+}

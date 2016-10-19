@@ -1,30 +1,60 @@
-<form name="signUpForm" novalidate>
-  <input type="text" name="firstName" placeholder="First Name"
-  ng-model="signUpCtrl.user.firstName"
-  required>
-  <br>
-  <input type="text" name="Surname" placeholder="Surame"
-  ng-model="signUpCtrl.user.surname"
-  required>
-  <br>
-  <input type="email" name="email" placeholder="Email"
-  ng-model="signUpCtrl.user.email"
-  required
-  email>
-  <span ng-if="signUpForm.email.$error.email">There is already an account with this email address.</span>
-  <br>
-  <input type="text" name="phone" placeholder="Phone ###-###-####"
-  ng-model="signUpCtrl.user.phone"
-  pattern="(\d{3})-(\d{3})-(\d{4})">
-  <br>
-  <input type="text" name="favItem" 
-  placeholder="Favourite Menu Item (e.g. NL5)"
-  minlength="2"
-  maxlength="4">
-  <br>
-  <button 
-  ng-disabled="signUpForm.$invalid"
-  ng-click="signUpCtrl.submit(user)">
-  Sign Up
-  </button>
-</form>
+<link rel="stylesheet" href="css/signup.css">
+
+
+<fieldset class="container sign-up-container">
+  <h1 id="form-title"> Sign up for our newsletter </h1> 
+  <form name="signUpForm" class="sign-up-form" novalidate>
+    <div class="form-item-container">
+      <h3 class="form-item"> First Name </h3>
+    </div>
+    <input type="text" name="firstName" placeholder="First Name"
+    ng-model="signUpCtrl.user.firstName"
+    required>
+    <br>
+    <div class="form-item-container">
+      <h3 class="form-item"> Surname </h3>
+    </div>
+    <input type="text" name="Surname" placeholder="Surame"
+    ng-model="signUpCtrl.user.surname"
+    required />
+    <br>
+    <div class="form-item-container">
+      <h3 class="form-item"> Email Address </h3>
+    </div>
+    <input type="email" name="email" placeholder="Email"
+    ng-model="signUpCtrl.user.email"
+    required
+    email />
+    {{signUpForm.email}}
+    <span ng-if="signUpForm.email.$error.email">There is already an account with this email address.</span>
+    <br>
+    <div class="form-item-container">
+      <h3 class="form-item"> Phone Number </h3>
+    </div>
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+    ng-model="signUpCtrl.user.phone"
+    pattern="(\d{3})-(\d{3})-(\d{4})" />
+    <br>
+    <div class="form-item-container">
+      <h3 class="form-item"> Favourite Menu Item </h3>
+    </div>
+    <input type="text" name="favItem" 
+    ng-model="signUpCtrl.user.favItem"
+    placeholder="Favourite Menu Item (e.g. NL5)"
+    minlength="2"
+    maxlength="4" />
+    <br>
+    <button
+    class="submit-button" 
+    ng-disabled="signUpForm.$invalid"
+    ng-click="signUpCtrl.submit(signUpCtrl.user);">
+    Sign Up
+    </button>
+  <div style="margin-top: 10px;">
+    Form valid? {{ signUpForm.$valid }}
+    <br>
+    {{signUpCtrl}}
+  </div>  
+  </form>
+</fieldset>
+

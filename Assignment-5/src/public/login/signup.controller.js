@@ -5,11 +5,12 @@
 angular.module('public')
 .controller("SignUpController", SignUpController);
 
-SignUpController.$inject = ["LogInService", "MenuService", "ApiPath"];
-function SignUpController(LogInService) {
+SignUpController.$inject = ["LogInService", "MenuService", "ApiPath", "$scope"];
+function SignUpController(LogInService, MenuService, ApiPath, $scope){
 	var signUpCtrl = this;
 
 	signUpCtrl.submit = function(userData){
+		console.log(userData);
 		if(userData.favItem){
 			MenuService.getItemInfo(userData.favItem)
 			.then(function(response){
