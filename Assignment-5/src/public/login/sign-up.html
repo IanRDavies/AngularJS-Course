@@ -1,0 +1,30 @@
+<form name="signUpForm" novalidate>
+  <input type="text" name="firstName" placeholder="First Name"
+  ng-model="signUpCtrl.user.firstName"
+  required>
+  <br>
+  <input type="text" name="Surname" placeholder="Surame"
+  ng-model="signUpCtrl.user.surname"
+  required>
+  <br>
+  <input type="email" name="email" placeholder="Email"
+  ng-model="signUpCtrl.user.email"
+  required
+  email>
+  <span ng-if="signUpForm.email.$error.email">There is already an account with this email address.</span>
+  <br>
+  <input type="text" name="phone" placeholder="Phone ###-###-####"
+  ng-model="signUpCtrl.user.phone"
+  pattern="(\d{3})-(\d{3})-(\d{4})">
+  <br>
+  <input type="text" name="favItem" 
+  placeholder="Favourite Menu Item (e.g. NL5)"
+  minlength="2"
+  maxlength="4">
+  <br>
+  <button 
+  ng-disabled="signUpForm.$invalid"
+  ng-click="signUpCtrl.submit(user)">
+  Sign Up
+  </button>
+</form>

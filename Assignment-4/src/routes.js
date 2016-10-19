@@ -28,9 +28,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider){
 		url: "/category-items/{categoryId}",
 		templateUrl: "src/templates/items.template.html",
 		controller: "CategoryDetailController as categoryItems",
-		params: {
-			categoryId: null		
-		},
+		// PARAMS NOT NECESSARY IT SEEMS
+		// params: {
+		// 	categoryId: null		
+		// },
 		resolve: {
 			items: ["MenuDataService", "$stateParams", function(MenuDataService, $stateParams){
 				return MenuDataService.getItemsForCategory($stateParams.categoryId);

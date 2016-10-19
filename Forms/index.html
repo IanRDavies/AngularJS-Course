@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="SimpleFormsApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Simple Form Validation</title>
+  </head>
+  <body ng-controller="RegistrationController as reg">
+    <h1>Simple Form Validation</h1>
+
+    <fieldset>
+      <legend>Registration</legend>
+      <form name='regForm' novalidate> 
+      <!-- No validate to stop built in browser validation and ensure that Angular Validation is used -->
+
+        <input type="text" name="username" placeholder="Pick a username"
+          ng-model="reg.user.username"
+          required
+          minlength="4"
+          ng-maxlength="10">
+          {{ reg.user.username }}
+          <!-- value from inputfield is only copied into ng-model if all the validation criteria passed -->
+          <!-- stored in reg.user as collecting all info in a user object on controller reg -->
+          <!-- could use ng-minlength -->
+          <span
+            ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched"> 
+            <!-- $error objects hold errors for each validation criteria (hence $error.minlength) --> 
+            <!-- $touched is if its been clicked in and out of -->
+            <!-- in this case empty field (never clicked in) is fine as has to be touched for if we didnt have required - minlength only activates once there is something to test (i.e. "" rather than undefined) -->
+
+            Username must be at least 4 characters long
+          </span>
+          <span ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
+          <!-- maxlength NOT ng-maxlenth -->
+            Username must not be longer than 10 characters
+          </span>
+          <br>
+
+        <input type="email" name="email" placeholder="Email"
+          ng-model="reg.user.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+           <!-- $invalid looks for @ as it is implicit in the email type of input to check for this -->
+
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="reg.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <!-- regex works in pattern - our validation -->
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="reg.submit()">Submit</button>
+          <!-- ng-disabled stops button working if not all valid -->
+
+          <div style="margin-top: 10px;">
+            Form valid? {{ regForm.$valid }}
+            <!-- built in valid boolean is formObj.$valid -->
+          </div>
+      </form>
+    </fieldset>
+
+    <div id="info" ng-if="reg.completed">
+      Username: {{ reg.user.username}} <br>
+      Email: {{ reg.user.email}} <br>
+      Phone: {{ reg.user.phone }}
+    </div>
+
+    <script src="lib/angular.min.js"></script>
+    <script src="src/app.js"></script>
+
+  </body>
+</html>

@@ -1,5 +1,7 @@
 <ul>
   <li ng-repeat="category in $ctrl.categories">
     <a href="#/category-items/{{category.shortName}}">{{ category.name }}</a>
+    <!-- could have used ui-sref="items({categoryShortName: category.shortName})" -->
+    <!-- The 'using the view like a function' technique -->
   </li>
 </ul>

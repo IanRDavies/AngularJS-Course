@@ -1,0 +1,10 @@
+<div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+  <a ui-sref="public.menuitems({category: $ctrl.category.short_name})">
+  <!-- use link like function to pass the right category for link -->
+    <div class="category-tile">
+      <img width="200" height="200" ng-src="images/menu/{{$ctrl.category.short_name}}/{{$ctrl.category.short_name}}.jpg" alt="{{$ctrl.category.name}}">
+      <!-- use ng-src to ensure that angular is ready for the src rather than src trying to load before interpolation complete -->
+      <span>{{$ctrl.category.name}}</span>
+    </div>
+  </a>
+</div>
