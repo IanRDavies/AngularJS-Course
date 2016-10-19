@@ -28,12 +28,7 @@ function MenuService($http, ApiPath) {
   };
 
   service.getItemInfo = function(itemName){
-    try{
-      return $http.get(ApiPath + "/menu_items/" + itemName + ".json")
-    }
-    catch(e) {
-      return e
-    }
+    return $http.get(ApiPath + "/menu_items/" + itemName + ".json")
   }
 
 }
