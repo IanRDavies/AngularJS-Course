@@ -19,7 +19,7 @@ function SignUpController(LogInService, MenuService, ApiPath, $scope, $location)
 
 	signUpCtrl.submit = function(userData, form){
 		if(userData.favItem){
-			MenuService.getItemInfo(userData.favItem)
+			MenuService.getItemInfo(userData.favItem.toUpperCase())
 			.then(function(response){
 				userData.favItemInfo = response.data;
 				if(userData.favItemInfo.image_present){
