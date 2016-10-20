@@ -1,0 +1,21 @@
+<!-- If they have signed up -->
+<div class="container" ng-show="userInfo.user">
+  <h1> Welcome {{userInfo.user.firstName}} {{userInfo.user.surname}}! </h1>
+
+  <h2> Registered Information </h2>
+  Name: {{userInfo.user.firstname }} {{userInfo.user.surname}}
+  <br/>
+  Email Address: {{userInfo.user.email}}
+  <br/>
+  <span ng-if="userInfo.user.phone">Phone Number: {{userInfo.user.phone}}</span><br/>
+  <h3> And your favourite item from our menu </h3>
+  <menu-item ng-if="userInfo.user.favItemInfo"
+                menu-item="userInfo.user.favItemInfo">
+  </menu-item>
+</div>
+
+
+<!-- If there is no user signed up -->
+<div class="container" ng-hide="userInfo.user">
+	<h3> Not signed up yet. <a ui-sref="public.signUp">Sign up now!</a></h3>
+</div>

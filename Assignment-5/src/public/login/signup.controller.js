@@ -5,8 +5,8 @@
 angular.module('public')
 .controller("SignUpController", SignUpController);
 
-SignUpController.$inject = ["LogInService", "MenuService", "ApiPath", "$scope"];
-function SignUpController(LogInService, MenuService, ApiPath, $scope){
+SignUpController.$inject = ["LogInService", "MenuService", "ApiPath", "$scope", "$location"];
+function SignUpController(LogInService, MenuService, ApiPath, $scope, $location){
 	var signUpCtrl = this;
 
 	function reset(form){
@@ -20,12 +20,15 @@ function SignUpController(LogInService, MenuService, ApiPath, $scope){
 	signUpCtrl.submit = function(userData, form){
 		if(userData.favItem){
 			MenuService.getItemInfo(userData.favItem)
-			.then(function(response){console.log(response)
-				return response;})
 			.then(function(response){
 				userData.favItemInfo = response.data;
-				userData.favItemImageUrl = 
-					(ApiPath + "/images/" + userData.favItem + ".jpg")
+				if(userData.favItemInfo.image_present){
+					userData.favItemImageUrl = 
+						(ApiPath + "/images/" + userData.favItem + ".jpg")
+					}
+				else{
+					userData.favItemImageUrl = "images/ImgNotAvailable.jpg"
+				}
 				LogInService.createUser(userData);
 				reset(form);
 			})

@@ -8,8 +8,9 @@ LogInService.$inject = ['$http', 'ApiPath'];
 function LogInService() {
 	var service = this;
 
-	var users = []
-	var emails = []
+	var users = [];
+	var emails = [];
+	var currentUser;
 
 	service.uniqueUser = function(email){
 		if(emails.includes(email.toLowerCase())){
@@ -24,10 +25,15 @@ function LogInService() {
 		// to prevent the same email with differing case being submitted
 		userData.email = userData.email.toLowerCase();
 		emails.push(userData.email);
+		currentUser = userData;
 		users.push(userData);
+	}
+
+	service.getCurrentUser = function(){
+		return currentUser;
 	}
 
 };
 
 
-})();
+})();	
