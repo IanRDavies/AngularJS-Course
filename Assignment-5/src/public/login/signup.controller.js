@@ -15,6 +15,7 @@ function SignUpController(LogInService, MenuService, ApiPath, $scope){
     	form.$setUntouched();
     	form.noSuchItem = false;
     	signUpCtrl.user = {}
+    	form.completed = false;
 	}
 
 	signUpCtrl.submit = function(userData, form){
@@ -31,6 +32,7 @@ function SignUpController(LogInService, MenuService, ApiPath, $scope){
 				}
 				LogInService.createUser(userData);
 				reset(form);
+				form.completed = true;
 			})
 			.catch(function(error){
 				form.noSuchItem = true;
@@ -39,6 +41,7 @@ function SignUpController(LogInService, MenuService, ApiPath, $scope){
 		else{
 			LogInService.createUser(userData);
 			reset(form);
+			form.completed = true;
 		}
 	}
 
