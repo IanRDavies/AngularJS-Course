@@ -8,10 +8,11 @@
   Email Address: {{userInfo.user.email}}
   <br/>
   <span ng-if="userInfo.user.phone">Phone Number: {{userInfo.user.phone}}</span><br/>
-  <h3> And your favourite item from our menu </h3>
-  <menu-item ng-if="userInfo.user.favItemInfo"
-                menu-item="userInfo.user.favItemInfo">
-  </menu-item>
+  <div ng-if="userInfo.user.favItemInfo">
+    <h3> And your favourite item from our menu </h3>
+    <menu-item menu-item="userInfo.user.favItemInfo">
+    </menu-item>
+  </div>
 </div>
 
 
