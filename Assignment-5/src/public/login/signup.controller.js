@@ -5,8 +5,8 @@
 angular.module('public')
 .controller("SignUpController", SignUpController);
 
-SignUpController.$inject = ["LogInService", "MenuService", "ApiPath", "$scope", "$location"];
-function SignUpController(LogInService, MenuService, ApiPath, $scope, $location){
+SignUpController.$inject = ["LogInService", "MenuService", "ApiPath", "$scope"];
+function SignUpController(LogInService, MenuService, ApiPath, $scope){
 	var signUpCtrl = this;
 
 	function reset(form){
